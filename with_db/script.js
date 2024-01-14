@@ -22,7 +22,7 @@ function loadContent() {
     url: "load_content.php",
     success: function (response) {
       formattedResponse = response.replace(/,/g, "\n");
-      $(".textArea").html(formattedResponse);
+      $(".textArea").val(formattedResponse);
     },
     error: function (error) {
       console.log(error), alert("메모 불러오기 실패!");
