@@ -15,3 +15,17 @@ function saveContent() {
     },
   });
 }
+
+function loadContent() {
+  $.ajax({
+    type: "GET",
+    url: "load_content.php",
+    success: function (response) {
+      formattedResponse = response.replace(/,/g, "\n");
+      $(".textArea").html(formattedResponse);
+    },
+    error: function (error) {
+      console.log(error), alert("메모 불러오기 실패!");
+    },
+  });
+}
