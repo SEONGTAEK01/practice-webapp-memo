@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 // Execute query
-$sql="SELECT content FROM memo_table";
+$sql="SELECT content, created_at FROM memo_table";
 $result = $conn->query($sql);
 
 if ($result) {
@@ -24,7 +24,7 @@ if ($result) {
     if ($result->num_rows > 0) {
         // Fetch all rows
         while ($row = $result->fetch_assoc()) {
-            $contentArray[] = $row['content'];
+            $contentArray[] = $row['content'] . ' (저장시간: ' . $row['created_at'] . ')';
         }
         
         // Format
