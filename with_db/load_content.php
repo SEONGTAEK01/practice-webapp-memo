@@ -1,7 +1,7 @@
 <?php
 // Connection detail
-$servername="localhost";
-$username="test";
+$servername="34.64.140.24";
+$username="root";
 $password="test1234";
 $dbname="memo_web_app";
 $tablename="memo_table";
