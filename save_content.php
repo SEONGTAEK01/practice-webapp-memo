@@ -16,6 +16,7 @@ if ($conn->connect_error) {
 // If content is submitted
 if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content'])) {
     $content=$_POST['content'];
+    $uniqueValue=$_POST['uniqueValue'];
 
     // Convert time to GMT+9
     $currentTime = new DateTime('now', new DateTimeZone('UTC'));
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content'])) {
     $localTime = $currentTime->format('Y-m-d H:i:s');
 
     // Store it into the database
-    $sql="INSERT INTO memo_table (content, created_at) VALUES ('$content', '$localTime')";
+    $sql="INSERT INTO memo_table (unique_val, content, created_at) VALUES ('$uniqueValue', '$content', '$localTime')";
     if ($conn->query($sql)===TRUE) {
         echo "저장되었습니다.";
     }

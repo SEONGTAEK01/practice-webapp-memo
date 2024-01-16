@@ -15,7 +15,9 @@ if ($conn->connect_error) {
 }
 
 // Execute query
-$sql="SELECT content, created_at FROM memo_table";
+$uniqueValue = $_GET['uniqueValue'];
+
+$sql="SELECT content, created_at FROM memo_table WHERE unique_val='$uniqueValue'";
 $result = $conn->query($sql);
 
 if ($result) {
