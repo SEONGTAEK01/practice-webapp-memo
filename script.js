@@ -2,6 +2,12 @@ function saveContent() {
   // Get content
   var content = $(".textArea").val();
 
+  // Check empty
+  if (content.trim() == "") {
+    alert("아무 값도 없습니다. 저장하지 않습니다.");
+    return;
+  }
+
   // Send content to php script
   $.ajax({
     type: "POST",
