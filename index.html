@@ -21,13 +21,24 @@
     <!-- Contents -->
     <div id="content">
       <div class="user_area">
-        <label class="label" for="uniqueValue">본인 고유값: </label>
+        <label
+          class="label"
+          for="uniqueValue"
+          onmouseover="showTooltip()"
+          onmouseout="hideTooltip()"
+          >본인 고유값:</label
+        >
         <input
           class="input-field"
           type="text"
           id="uniqueValue"
-          placeholder="값을 입력 하세요"
+          placeholder="값을 입력하세요"
         />
+        <!-- 툴팁 엘리먼트 -->
+        <div id="tooltip">
+          메모 저장, 불러오기 시 사용할 고유한 값을 입력해 주세요. 예)
+          '햄버거123', 'abcd', '1234' 등
+        </div>
       </div>
       <div class="btn_area">
         <input type="button" value="저장하기" onclick="saveContent()" />

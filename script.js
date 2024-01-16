@@ -58,3 +58,30 @@ function loadContent() {
 function clearContent() {
   $(".textArea").val("");
 }
+$(document).ready(function () {
+  var tooltip = $("#tooltip");
+  var inputField = $(".input-field");
+
+  inputField.mouseover(function () {
+    showTooltip();
+  });
+
+  inputField.mouseout(function () {
+    hideTooltip();
+  });
+
+  function showTooltip() {
+    // 툴팁 위치 설정
+    var rect = inputField[0].getBoundingClientRect();
+    var top = rect.top + window.scrollY - 30; // 위쪽으로 조금 이동
+    var left = rect.left + window.scrollX;
+
+    // 툴팁 표시
+    tooltip.css({ top: top + "px", left: left + "px", display: "block" });
+  }
+
+  function hideTooltip() {
+    // 툴팁 숨기기
+    tooltip.css("display", "none");
+  }
+});
