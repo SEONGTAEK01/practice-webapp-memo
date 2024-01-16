@@ -17,8 +17,13 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['content'])) {
     $content=$_POST['content'];
 
+    // Convert time to GMT+9
+    $currentTime = new DateTime('now', new DateTimeZone('UTC'));
+    $currentTime->setTimezone(new DateTimeZone('Asia/Seoul'));
+    $localTime = $currentTime->format('Y-m-d H:i:s');
+
     // Store it into the database
-    $sql="INSERT INTO memo_table (content) VALUES ('$content')";
+    $sql="INSERT INTO memo_table (content, created_at) VALUES ('$content', '$localTime')";
     if ($conn->query($sql)===TRUE) {
         echo "저장되었습니다.";
     }
