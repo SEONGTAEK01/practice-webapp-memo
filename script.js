@@ -29,3 +29,7 @@ function loadContent() {
     },
   });
 }
+
+function clearContent() {
+  $(".textArea").val("");
+}
