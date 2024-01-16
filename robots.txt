@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taek-memo-87d20946a566.herokuapp.com/sitemap.xml
+
