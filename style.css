@@ -1,7 +1,15 @@
 html,
 body {
+  font-family: "Arial", sans-serif;
+  font-size: 24px;
+  background-color: #fff3b0;
   margin: 0px;
   padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 div,
 textarea {
@@ -15,7 +23,8 @@ textarea {
 }
 
 .logo {
-  width: 150px;
+  font-family: "Arial", sans-serif;
+  background-color: #fff3b0;
   text-align: center;
   line-height: 50px;
   margin: 0 auto;
@@ -24,17 +33,33 @@ textarea {
 .user-area {
   display: flex;
   align-items: center;
+  justify-content: center; /* 중앙 정렬을 위해 추가 */
+  padding: 10px 0; /* 상하 여백 추가 */
 }
 
 .label {
   margin-right: 10px;
+  background-color: #fccf51; /* 레이블 배경색을 textarea와 일치시킴 */
+  color: #333; /* 레이블 텍스트 색상 */
+  padding: 3px 10px 6px; /* 패딩 추가 */
+  border-radius: 5px; /* 모서리를 둥글게 */
+  font-weight: bold; /* 글씨 두께 */
+
+  line-height: normal; /* 라인 높이 기본값 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .input-field {
-  padding: 5px;
-  width: 200px;
+  padding: 8px;
+  width: 240px; /* 너비 조정 */
+  margin-right: 1;
+  border: 1px solid #ccc; /* 테두리 색상 조정 */
+  border-radius: 5px; /* 모서리를 둥글게 */
+  font-size: 16px; /* 글씨 크기 조정 */
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
-
 .textArea {
   width: 100%;
   height: 500px;
@@ -43,6 +68,32 @@ textarea {
   border: 1px solid #ccc;
   font-size: 26px;
   padding: 20px;
+}
+
+.btn_area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:first-child {
+  margin-right: 10px;
+}
+.button:last-child {
+  margin-left: 10px;
+}
+.button:hover {
+  background-color: #e1e1e1;
+}
+.button i {
+  margin-right: 8px;
 }
 
 #tooltip {

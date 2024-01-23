@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>가장 간단한 온라인 메모장</title>
+
     <!-- 메타 태그 최적화 시작 -->
     <link rel="canonical" href="https://www.web-memo.kro.kr" />
     <meta name="description" content="가장 간단한 온라인 메모장" />
@@ -24,13 +25,22 @@
     <!-- <meta name="twitter:image" content="여기에 대표 이미지 URL을 입력하세요." /> -->
     <meta name="twitter:card" content="summary_large_image" />
     <!-- 메타 태그 최적화 종료 -->
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0ac6bd0aa4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- Header -->
@@ -46,7 +56,7 @@
           for="uniqueValue"
           onmouseover="showTooltip()"
           onmouseout="hideTooltip()"
-          >본인 고유값:</label
+          >unique id</label
         >
         <input
           class="input-field"
@@ -61,13 +71,18 @@
         </div>
       </div>
       <div class="btn_area">
-        <input type="button" value="메모 저장하기" onclick="saveContent()" />
-        <input type="button" value="메모 가져오기" onclick="loadContent()" />
-        <input
-          type="button"
-          value="현재 메모 지우기"
-          onclick="clearContent()"
-        />
+        <button class="button" onclick="saveContent()">
+          <i class="fas fa-pencil-alt"></i>
+          Save Note
+        </button>
+        <button class="button" onclick="loadContent()">
+          <i class="fas fa-save"></i>
+          Load Note
+        </button>
+        <button class="button" onclick="clearContent()">
+          <i class="fas fa-trash"></i>
+          Clear Note
+        </button>
       </div>
 
       <textarea class="textArea"></textarea>
